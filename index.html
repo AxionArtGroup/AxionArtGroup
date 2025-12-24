@@ -9,7 +9,11 @@
     html {
       scroll-behavior: smooth;
     }
-
+<a href="https://wa.me/989396801433?text=سلام، برای مشاوره نقاشی ساختمان پیام میدم"
+   class="whatsapp-float"
+   target="_blank">
+   واتساپ
+</a>
    body {
       margin: 0;
       font-family: sans-serif;
@@ -77,6 +81,25 @@
       border-right: 4px solid #444;
       padding-right: 10px;
     }
+    .trust {
+  margin: 40px auto;
+  text-align: center;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.8;
+    }
+    .whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #25d366;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  z-index: 1000;
+    }
 
     /* خدمات */
     .services {
@@ -103,7 +126,13 @@
       width: 100%;
       border-radius: 10px;
     }
-
+  .gallery-item span {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #666;
+  text-align: center;
+}
     /* تماس */
     .contact a {
       display: inline-block;
@@ -143,6 +172,37 @@
     .email {
       background: #555;
     }
+    .cta-text {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #555;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 22px;
+  background: #111;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 14px;
+}
+    .features {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.features div {
+  background: #fff;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
   </style>
 </head>
 
@@ -170,6 +230,10 @@
         ارائه‌دهنده خدمات تخصصی نقاشی ساختمان،  
         نقاشی داخلی و خارجی با اجرای تمیز، دقیق و حرفه‌ای.
       </p>
+      <p class="cta-text">
+برای بازدید و مشاوره <strong>رایگان</strong> همین حالا تماس بگیرید
+</p>
+<a href="tel:09396801433" class="cta-btn">تماس مستقیم</a>
     </header>
 
     <!-- SERVICES -->
@@ -182,7 +246,10 @@
         <div class="service">ترمیم و بازسازی رنگ‌های قدیمی</div>
       </div>
     </section>
-
+<section class="trust">
+  <p>✔ بیش از <strong>۳۰ پروژه</strong> موفق در تهران و حومه</p>
+  <p>✔ تحویل به‌موقع، اجرای تمیز، رضایت مشتری</p>
+</section>
     <!-- PORTFOLIO -->
     <section id="portfolio">
       <h2>نمونه کارها</h2>
@@ -191,6 +258,10 @@
         <img src="images/1000002468.jpg" alt="نمونه کار نقاشی ساختمان 2">
         <img src="images/IMG_20250925_091653.jpg" alt="نمونه کار نقاشی ساختمان 3">
       </div>
+              <div class="gallery-item">
+  <img src="IMG_20250902.jpg" alt="ویلای مدرن">
+  <span>ویلای دوبلکس – نمای مدرن – ۱۴۰۳</span>
+              </div>
     </section>
 
     <!-- ABOUT -->
@@ -203,7 +274,11 @@
         برای فضاهای مسکونی، اداری و تجاری است.
       </p>
     </section>
-
+<section class="features">
+  <div>کیفیت اجرای بالا</div>
+  <div>خوش‌قولی در تحویل</div>
+  <div>تمیزی و دقت در کار</div>
+</section>
     <!-- CONTACT -->
 <section id="contact" class="contact">
   <h2>ارتباط با ما</h2>
