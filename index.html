@@ -1,95 +1,139 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>alAxionArtGroup | نقاشی ساختمان محمد عباسی</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-</a>
-    href="https://wa.me/989396801433?text=سلام، برای مشاوره نقاشی ساختمان پیام میدم"
-   class="whatsapp-float"
-   target="_blank">
-   واتساپ
-</a>
-   body {
-      margin: 0;
-      font-family: sans-serif;
-      background: #f1ede9;
-      color: #2b2b2b;
-    }
+<title>alAxionArtGroup | نقاشی ساختمان محمد عباسی</title>
 
-    /* منو */
-    nav {
-      position: sticky;
-      top: 0;
-      background: #ffffffee;
-      backdrop-filter: blur(8px);
-      display: flex;
-      gap: 18px;
-      padding: 14px 20px;
-      border-bottom: 1px solid #ddd;
-      z-index: 100;
-    }
+<style>
+html { scroll-behavior: smooth; }
 
-    nav a {
-      text-decoration: none;
-      color: #333;
-      font-size: 14px;
-    }
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f1ede9;
+  color: #2b2b2b;
+}
 
-    nav a:hover { color: #000; }
+/* منو */
+nav {
+  position: sticky;
+  top: 0;
+  background: #ffffffdd;
+  backdrop-filter: blur(8px);
+  display: flex;
+  gap: 18px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #ddd;
+  z-index: 100;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
 
-    /* هدر */
-    header {
-      text-align: center;
-      padding: 60px 0;
-    }
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
 
-    header img {
-      width: 140px;
-      margin-bottom: 20px;
-    }
-
-    header h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      color: #555;
-      max-width: 750px;
-      margin: auto;
-      line-height: 1.9;
-    }
-
-    section {
-      margin-top: 80px;
-    }
-
-    section h2 {
-      font-size: 26px;
-      margin-bottom: 20px;
-      border-right: 4px solid #444;
-      padding-right: 10px;
-    }
-    .trust {
-  margin: 40px auto;
+/* هدر */
+header {
   text-align: center;
-  color: #444;
-  font-size: 15px;
-  line-height: 1.8;
-    }
-    .whatsapp-float {
+  padding: 60px 0;
+}
+
+header img {
+  width: 140px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 32px;
+}
+
+header p {
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.9;
+  color: #555;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 24px;
+  background: #111;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+}
+
+/* سکشن‌ها */
+section {
+  margin-top: 80px;
+}
+
+section h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  border-right: 4px solid #444;
+  padding-right: 10px;
+}
+
+/* خدمات */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.service {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+/* گالری */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.gallery-item p {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 8px;
+  color: #555;
+}
+
+/* لینک کاتالوگ */
+.catalog-link {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.catalog-link a {
+  color: #000;
+  font-weight: bold;
+}
+
+/* دکمه واتساپ شناور */
+.whatsapp-float {
   position: fixed;
   bottom: 20px;
   left: 20px;
@@ -99,229 +143,119 @@
   border-radius: 30px;
   text-decoration: none;
   font-size: 14px;
-  z-index: 1000;
-    }
+  z-index: 9999;
+}
 
-    /* خدمات */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
+/* تماس */
+.contact a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+}
 
-    .service {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    }
+.whatsapp { background: #25D366; }
+.instagram { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
+.phone { background: #444; }
+.email { background: #555; }
 
-    /* گالری */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-    }
-  .gallery-item span {
-  display: block;
-  margin-top: 8px;
+footer {
+  text-align: center;
+  padding: 25px;
   font-size: 13px;
   color: #666;
-  text-align: center;
 }
-    /* تماس */
-    .contact a {
-      display: inline-block;
-      margin: 12px 12px 0 0;
-      padding: 12px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 14px;
-      color: #fff;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-
-    .contact a:hover {
-      transform: translateY(-2px);
-    }
-
-    .whatsapp {
-      background: #25D366;
-    }
-
-    .whatsapp:hover {
-      box-shadow: 0 8px 20px rgba(37,211,102,.35);
-    }
-
-    .instagram {
-      background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af);
-    }
-
-    .instagram:hover {
-      box-shadow: 0 8px 20px rgba(221,42,123,.35);
-    }
-
-    .phone {
-      background: #444;
-    }
-
-    .email {
-      background: #555;
-    }
-    .cta-text {
-  margin-top: 15px;
-  font-size: 16px;
-  color: #555;
-}
-
-.cta-btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 22px;
-  background: #111;
-  color: #fff;
-  border-radius: 25px;
-  text-decoration: none;
-  font-size: 14px;
-}
-    .features {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin: 40px 0;
-  flex-wrap: wrap;
-}
-
-.features div {
-  background: #fff;
-  padding: 12px 18px;
-  border-radius: 12px;
-  font-size: 14px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-  </style>
+</style>
 </head>
 
 <body>
 
-  <!-- منو -->
-  <nav>
-    <a href="#home">خانه</a>
-    <a href="#services">خدمات</a>
-    <a href="#portfolio">نمونه کارها</a>
-    <a href="#about">درباره ما</a>
-    <a href="#contact">ارتباط با ما</a>
-  </nav>
+<nav>
+  <a href="#home">خانه</a>
+  <a href="#services">خدمات</a>
+  <a href="#portfolio">نمونه کارها</a>
+  <a href="#about">درباره ما</a>
+  <a href="#contact">ارتباط</a>
+</nav>
 
-  <div class="container">
+<div class="container">
 
-    <!-- HOME -->
-    <header id="home">
-      <!-- لوگو -->
-    <img src="logo/Axion-Art-Group-Logo.jpg" alt="Axion Art Group Logo">
+<header id="home">
+  <img src="logo/Axion-Art-Group-Logo.jpg">
+  <h1>Axion Art Group</h1>
+  <p>گروه نقاشی ساختمان Axion Art Group با مدیریت محمد عباسی</p>
+  <a href="tel:09396801433" class="cta-btn">تماس مستقیم</a>
+</header>
 
-      <h1>Axion Art Group</h1>
-      <p>
-        گروه Axion Art Group با مدیریت محمد عباسی،  
-        ارائه‌دهنده خدمات تخصصی نقاشی ساختمان،  
-        نقاشی داخلی و خارجی با اجرای تمیز، دقیق و حرفه‌ای.
-      </p>
-      <p class="cta-text">
-برای بازدید و مشاوره <strong>رایگان</strong> همین حالا تماس بگیرید
-</p>
-<a href="tel:09396801433" class="cta-btn">تماس مستقیم</a>
-    </header>
-
-    <!-- SERVICES -->
-    <section id="services">
-      <h2>خدمات ما</h2>
-      <div class="services">
-        <div class="service">نقاشی ساختمان با رنگ پلاستیک و روغنی</div>
-        <div class="service">نقاشی مدرن و دکوراتیو</div>
-        <div class="service">اجرای پتینه، بلکا و کاغذ دیواری</div>
-        <div class="service">ترمیم و بازسازی رنگ‌های قدیمی</div>
-      </div>
-    </section>
-<section class="trust">
-  <p>✔ بیش از <strong>۳۰ پروژه</strong> موفق در تهران و حومه</p>
-  <p>✔ تحویل به‌موقع، اجرای تمیز، رضایت مشتری</p>
-</section>
-    <!-- PORTFOLIO -->
-    <div class="gallery-item">
-  <img src="images/IMG_20250925_091653.jpg" alt="نمونه کار نقاشی ساختمان 3">
-<p>نقاشی نمای ویلای مدرن – تهراندشت</p>
-      </div>
-
-<div class="gallery-item">
-  <img src="images/1000002468.jpg" alt="نمونه کار نقاشی ساختمان 2">
-  <p>اجرای رنگ نما ساختمان دوبلکس</p>
+<section id="services">
+<h2>خدمات ما</h2>
+<div class="services">
+  <div class="service">نقاشی ساختمان روغنی و پلاستیک</div>
+  <div class="service">نقاشی مدرن و دکوراتیو</div>
+  <div class="service">پتینه، بلکا و کاغذ دیواری</div>
+  <div class="service">ترمیم رنگ‌های قدیمی</div>
 </div>
-
-<div class="gallery-item">
-  <img src="images/IMG_20250902_181312.jpg" alt="نمونه کار نقاشی ساختمان 1">
-  <p>طراحی و اجرای نمای خاص مدرن</p>
-</div>
-    <div class="catalog-link">
-  جهت دیدن نمونه‌های بیشتر از
-  <a href="https://docs.google.com/presentation/d/e/2PACX-1vR9NnaO5Hvq6qVaDANLJLsiI6KYgy-DIPZEXBHKJOYOKNM9OYRxnUqZPJMJJhhFg7iI8H4RJN-yLVGT/pub?start=false&loop=false&delayms=60000" target="_blank">
-    کاتالوگ تصاویر
-  </a>
-  دیدن فرمایید.
-    </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <h2>درباره ما</h2>
-      <p>
-        Axion Art Group با مدیریت محمد عباسی فعالیت خود را با تمرکز بر کیفیت،
-        خوش‌قولی و رضایت مشتری آغاز کرده است.
-        هدف ما ارائه خدمات نقاشی ساختمان با استاندارد بالا
-        برای فضاهای مسکونی، اداری و تجاری است.
-      </p>
-    </section>
-<section class="features">
-  <div>کیفیت اجرای بالا</div>
-  <div>خوش‌قولی در تحویل</div>
-  <div>تمیزی و دقت در کار</div>
-</section>
-    <!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>ارتباط با ما</h2>
-
-  <a href="tel:+989396801433" class="phone">
-    تماس تلفنی
-  </a>
-
-  <a href="https://wa.me/989396801433?text=سلام،%20برای%20نقاشی%20ساختمان%20تماس%20گرفتم"
-     target="_blank"
-     class="whatsapp">
-    واتساپ
-  </a>
-
-  <a href="https://instagram.com/AxionArtGroup"
-     target="_blank"
-     class="instagram">
-    اینستاگرام
-  </a>
-
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=AxionArtGroup@gmail.com"
-     target="_blank"
-     class="email">
-    ایمیل
-  </a>
 </section>
 
+<section id="portfolio">
+<h2>نمونه کارها</h2>
+
+<div class="gallery">
+  <div class="gallery-item">
+    <img src="images/IMG_20250902_181312.jpg">
+    <p>طراحی و اجرای نمای خاص مدرن</p>
   </div>
 
-  <footer>
-    © 2025 alAxionArtGroup — نقاشی ساختمان محمد عباسی
-  </footer>
+  <div class="gallery-item">
+    <img src="images/1000002468.jpg">
+    <p>اجرای رنگ نمای ساختمان دوبلکس</p>
+  </div>
+
+  <div class="gallery-item">
+    <img src="images/IMG_20250925_091653.jpg">
+    <p>نقاشی نمای ویلای مدرن – تهراندشت</p>
+  </div>
+</div>
+
+<div class="catalog-link">
+  جهت دیدن نمونه‌های بیشتر از
+  <a href="https://docs.google.com/presentation/d/e/2PACX-1vR9NnaO5Hvq6qVaDANLJLsiI6KYgy-DIPZEXBHKJOYOKNM9OYRxnUqZPJMJJhhFg7iI8H4RJN-yLVGT/pub" target="_blank">
+    کاتالوگ تصاویر
+  </a>
+  دیدن فرمایید
+</div>
+</section>
+
+<section id="about">
+<h2>درباره ما</h2>
+<p>
+Axion Art Group با تمرکز بر کیفیت، خوش‌قولی و اجرای تمیز فعالیت می‌کند.
+</p>
+</section>
+
+<section id="contact" class="contact">
+<h2>ارتباط با ما</h2>
+
+<a href="tel:+989396801433" class="phone">تماس تلفنی</a>
+<a href="https://wa.me/989396801433" class="whatsapp">واتساپ</a>
+<a href="https://instagram.com/AxionArtGroup" class="instagram">اینستاگرام</a>
+<a href="mailto:AxionArtGroup@gmail.com" class="email">ایمیل</a>
+</section>
+
+</div>
+
+<!-- واتساپ شناور -->
+<a href="https://wa.me/989396801433?text=سلام،%20برای%20نقاشی%20ساختمان%20پیام%20میدم"
+   class="whatsapp-float"
+   target="_blank">
+  واتساپ
+</a>
+
+<footer>
+© 2025 alAxionArtGroup — نقاشی ساختمان محمد عباسی
+</footer>
 
 </body>
 </html>
