@@ -10,61 +10,12 @@
       scroll-behavior: smooth;
     }
 
-    body {
+   body {
       margin: 0;
       font-family: sans-serif;
       background: #f1ede9;
       color: #2b2b2b;
-      direction: rtl;
     }
-
-    /* دکمه‌ها */
-    .contact a {
-      display: inline-block;
-      margin: 12px 12px 0 0;
-      padding: 12px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 14px;
-      color: #fff;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .contact a.whatsapp {
-      background: #25D366;
-    }
-
-    .contact a.whatsapp:hover {
-      background: #1ebe5d;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
-    }
-
-    .contact a.instagram {
-      background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
-    }
-
-    .contact a.instagram:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(221, 42, 123, 0.35);
-    .contact a.phone {
-  background: #0d6efd;
-}
-
-.contact a.phone:hover {
-  background: #0b5ed7;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(13,110,253,0.35);
-}
-
-.contact a.email {
-  background: #555;
-}
-
-.contact a.email:hover {
-  background: #333;
-  transform: translateY(-2px);
-}
 
     /* منو */
     nav {
@@ -85,9 +36,7 @@
       font-size: 14px;
     }
 
-    nav a:hover {
-      color: #000;
-    }
+    nav a:hover { color: #000; }
 
     .container {
       max-width: 1100px;
@@ -95,6 +44,7 @@
       padding: 40px 20px;
     }
 
+    /* هدر */
     header {
       text-align: center;
       padding: 60px 0;
@@ -103,6 +53,18 @@
     header img {
       width: 140px;
       margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: #555;
+      max-width: 750px;
+      margin: auto;
+      line-height: 1.9;
     }
 
     section {
@@ -116,8 +78,8 @@
       padding-right: 10px;
     }
 
-    .services,
-    .gallery {
+    /* خدمات */
+    .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
@@ -130,16 +92,56 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     }
 
+    /* گالری */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
     .gallery img {
       width: 100%;
       border-radius: 10px;
     }
 
-    footer {
-      text-align: center;
-      margin: 100px 0 30px;
+    /* تماس */
+    .contact a {
+      display: inline-block;
+      margin: 12px 12px 0 0;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
       font-size: 14px;
-      color: #777;
+      color: #fff;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .contact a:hover {
+      transform: translateY(-2px);
+    }
+
+    .whatsapp {
+      background: #25D366;
+    }
+
+    .whatsapp:hover {
+      box-shadow: 0 8px 20px rgba(37,211,102,.35);
+    }
+
+    .instagram {
+      background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af);
+    }
+
+    .instagram:hover {
+      box-shadow: 0 8px 20px rgba(221,42,123,.35);
+    }
+
+    .phone {
+      background: #444;
+    }
+
+    .email {
+      background: #555;
     }
   </style>
 </head>
