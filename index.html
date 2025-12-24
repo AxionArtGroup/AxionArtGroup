@@ -5,12 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>alAxionArtGroup | نقاشی ساختمان محمد عباسی</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+.contact a {
+  display: inline-block;
+  margin: 12px 12px 0 0;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* واتساپ */
+.contact a.whatsapp {
+  background: #25D366;
+}
+
+.contact a.whatsapp:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+}
+
+/* اینستاگرام */
+.contact a.instagram {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+}
+
+.contact a.instagram:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(221, 42, 123, 0.35);
+}
 
     html {
       scroll-behavior: smooth;
