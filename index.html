@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="fa">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>alAxionArtGroup | نقاشی ساختمان محمد عباسی</title>
+<title>AxionArtGroup | نقاشی ساختمان محمد عباسی</title>
 
 <style>
 html { scroll-behavior: smooth; }
@@ -20,8 +21,7 @@ body {
 nav {
   position: sticky;
   top: 0;
-  background: #ffffffdd;
-  backdrop-filter: blur(8px);
+  background: #ffffffee;
   display: flex;
   gap: 18px;
   padding: 14px 20px;
@@ -35,6 +35,7 @@ nav a {
   font-size: 14px;
 }
 
+/* کانتینر */
 .container {
   max-width: 1100px;
   margin: auto;
@@ -57,38 +58,24 @@ header h1 {
 }
 
 header p {
-  max-width: 750px;
-  margin: auto;
-  line-height: 1.9;
   color: #555;
+  line-height: 1.9;
 }
 
 .cta-btn {
   display: inline-block;
   margin-top: 15px;
-  padding: 10px 24px;
+  padding: 10px 22px;
   background: #111;
   color: #fff;
   border-radius: 25px;
   text-decoration: none;
 }
 
-/* سکشن‌ها */
-section {
-  margin-top: 80px;
-}
-
-section h2 {
-  font-size: 26px;
-  margin-bottom: 20px;
-  border-right: 4px solid #444;
-  padding-right: 10px;
-}
-
 /* خدمات */
 .services {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
   gap: 20px;
 }
 
@@ -96,13 +83,12 @@ section h2 {
   background: #fff;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
 }
 
 /* گالری */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
   gap: 18px;
 }
 
@@ -124,26 +110,6 @@ section h2 {
 .catalog-link {
   margin-top: 25px;
   text-align: center;
-  font-size: 14px;
-}
-
-.catalog-link a {
-  color: #000;
-  font-weight: bold;
-}
-
-/* دکمه واتساپ شناور */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #25d366;
-  color: #fff;
-  padding: 12px 18px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 14px;
-  z-index: 9999;
 }
 
 /* تماس */
@@ -161,6 +127,20 @@ section h2 {
 .phone { background: #444; }
 .email { background: #555; }
 
+/* واتساپ شناور */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #25d366;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  z-index: 9999;
+}
+
+/* فوتر */
 footer {
   text-align: center;
   padding: 25px;
@@ -173,37 +153,16 @@ footer {
 <body>
 
 <nav>
-  <a href="../index.html">خانه</a>
-  <a href="../index.html#services">خدمات</a>
-  <a href="../index.html#gallery">نمونه کارها</a>
-  <a href="../index.html#contact">تماس</a>
+  <a href="#home">خانه</a>
+  <a href="#services">خدمات</a>
+  <a href="#portfolio">نمونه کارها</a>
+  <a href="#contact">تماس</a>
 </nav>
 
 <div class="container">
 
-<h1>نقاشی ساختمان</h1>
-
-<p>
-در Axion Art Group خدمات نقاشی ساختمان با استفاده از رنگ‌های
-روغنی، پلاستیک و اکریلیک با اجرای تمیز و حرفه‌ای انجام می‌شود.
-تمام مراحل کار با دقت بالا، پوشش کامل فضا و تحویل به‌موقع اجرا می‌گردد.
-</p>
-
-<div class="gallery">
-  <img src="../images/IMG_20250902_181312.jpg" alt="نمونه نقاشی ساختمان">
-  <img src="../images/1000002468.jpg" alt="اجرای رنگ نما">
-  <img src="../images/IMG_20250925_091653.jpg" alt="نقاشی نمای ویلا">
-</div>
-
-<a href="../index.html#services" class="back">
-  بازگشت به صفحه اصلی
-</a>
-</div>
-
-</body>
-</html>
 <header id="home">
-  <img src="logo/Axion-Art-Group-Logo.jpg">
+  <img src="logo/Axion-Art-Group-Logo.jpg" alt="Axion Art Group Logo">
   <h1>Axion Art Group</h1>
   <p>گروه نقاشی ساختمان Axion Art Group با مدیریت محمد عباسی</p>
   <a href="tel:09396801433" class="cta-btn">تماس مستقیم</a>
@@ -244,21 +203,12 @@ footer {
   <a href="https://docs.google.com/presentation/d/e/2PACX-1vR9NnaO5Hvq6qVaDANLJLsiI6KYgy-DIPZEXBHKJOYOKNM9OYRxnUqZPJMJJhhFg7iI8H4RJN-yLVGT/pub" target="_blank">
     کاتالوگ تصاویر
   </a>
-  دیدن فرمایید
 </div>
-</section>
-
-<section id="about">
-<h2>درباره ما</h2>
-<p>
-Axion Art Group با تمرکز بر کیفیت، خوش‌قولی و اجرای تمیز فعالیت می‌کند.
-</p>
 </section>
 
 <section id="contact" class="contact">
 <h2>ارتباط با ما</h2>
-
-<a href="tel:+989396801433" class="phone">تماس تلفنی</a>
+<a href="tel:+989396801433" class="phone">تماس</a>
 <a href="https://wa.me/989396801433" class="whatsapp">واتساپ</a>
 <a href="https://instagram.com/AxionArtGroup" class="instagram">اینستاگرام</a>
 <a href="mailto:AxionArtGroup@gmail.com" class="email">ایمیل</a>
@@ -266,7 +216,6 @@ Axion Art Group با تمرکز بر کیفیت، خوش‌قولی و اجرا�
 
 </div>
 
-<!-- واتساپ شناور -->
 <a href="https://wa.me/989396801433?text=سلام،%20برای%20نقاشی%20ساختمان%20پیام%20میدم"
    class="whatsapp-float"
    target="_blank">
