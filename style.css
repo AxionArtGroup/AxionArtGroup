@@ -1,0 +1,179 @@
+/* تنظیمات پایه */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f1ede9;
+  color: #2b2b2b;
+  line-height: 1.9;
+}
+
+/* منو */
+nav {
+  position: sticky;
+  top: 0;
+  background: #ffffffdd;
+  backdrop-filter: blur(8px);
+  display: flex;
+  gap: 18px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #ddd;
+  z-index: 100;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+/* کانتینر */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* هدر */
+header {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+header img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+header p {
+  max-width: 750px;
+  margin: auto;
+  color: #555;
+}
+
+/* دکمه تماس */
+.cta-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #111;
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* تیتر سکشن */
+section h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  border-right: 4px solid #444;
+  padding-right: 10px;
+}
+
+/* خدمات */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.service {
+  display: block;
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #2b2b2b;
+  transition: 0.25s;
+}
+
+.service:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* گالری */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.gallery-item p {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 8px;
+  color: #555;
+}
+
+/* لینک کاتالوگ */
+.catalog-link {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.catalog-link a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* تماس */
+.contact a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.phone { background: #444; }
+.whatsapp { background: #25D366; }
+.instagram { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
+.email { background: #555; }
+
+/* واتساپ شناور */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #25d366;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  z-index: 9999;
+  box-shadow: 0 8px 20px rgba(37,211,102,0.35);
+}
+
+/* فوتر */
+footer {
+  text-align: center;
+  padding: 25px;
+  font-size: 13px;
+  color: #666;
+}
