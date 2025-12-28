@@ -396,5 +396,22 @@ footer {
   .hero-content p {
     font-size: 16px;
   }
+/* ===== Hero Animation ===== */
+
+/* حالت اولیه (مخفی) */
+.hero-content {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroFadeUp 1.2s ease forwards;
+  animation-delay: 0.3s;
 }
+
+/* انیمیشن */
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
