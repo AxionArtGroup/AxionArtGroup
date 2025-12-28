@@ -226,4 +226,92 @@ footer {
     right: auto;
     left: 0;
   }
+  /* ===== Hero Section ===== */
+.hero {
+  width: 100%;
+  height: 450px;
+  background: url("images/hero-bg.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-text h1 {
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.hero-btn {
+  background-color: #25d366;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.hero-btn:hover {
+  background-color: #128C7E;
+}
+
+/* ===== Testimonials ===== */
+.testimonials {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.testimonials h2 {
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #333;
+}
+
+.test-cards {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.test-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  padding: 20px;
+  width: 280px;
+  font-size: 15px;
+  color: #444;
+}
+
+.test-card span {
+  display: block;
+  margin-top: 14px;
+  font-weight: bold;
+  color: #128C7E;
+}
+
+/* ===== Responsive Testimonial ===== */
+@media (max-width: 768px) {
+  .test-cards {
+    flex-direction: column;
+    align-items: center;
+  }
 }
