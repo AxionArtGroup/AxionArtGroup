@@ -314,4 +314,87 @@ footer {
     flex-direction: column;
     align-items: center;
   }
+/* ===== Hero Section ===== */
+.hero {
+  width: 100%;
+  height: 480px;
+  background: url("https://images.unsplash.com/photo-1581578731548-c64695cc6952")
+              center / cover no-repeat;
+  position: relative;
 }
+
+/* لایه تیره برای خوانایی متن */
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* محتوای Hero */
+.hero-content {
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 38px;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #f1f1f1;
+}
+
+/* دکمه‌ها */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.hero-btn.call {
+  background-color: #0d6efd;
+}
+
+.hero-btn.whatsapp {
+  background-color: #25d366;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* ===== موبایل ===== */
+@media (max-width: 768px) {
+  .hero {
+    height: 420px;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+}
+
