@@ -39,49 +39,6 @@ body {
   border-radius: 5px;
 }
 
-/* منوی کشویی */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn {
-  background-color: #333;
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #128C7E;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
 /* فاصله از محتوای اصلی */
 .page-enter {
   margin-top: 80px;  /* فاصله از بالای صفحه */
@@ -145,6 +102,7 @@ header p {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  object-fit: cover;  /* تصاویری که نیاز به اندازه گیری دارند */
   margin-bottom: 10px;
 }
 
@@ -171,6 +129,7 @@ header p {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  object-fit: cover;  /* تنظیم اندازه و تناسب تصویر */
   margin-bottom: 10px;
 }
 
@@ -263,5 +222,13 @@ footer {
   .navbar a {
     font-size: 16px;
     padding: 8px 15px;
+  }
+
+  .services {
+    flex-direction: column; /* بخش خدمات در موبایل عمودی می‌شود */
+  }
+
+  .gallery {
+    flex-direction: column; /* گالری در موبایل به صورت عمودی نمایش داده می‌شود */
   }
 }
