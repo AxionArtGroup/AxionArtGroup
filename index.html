@@ -7,14 +7,22 @@
   <link rel="stylesheet" href="style.css">
   <meta name="description" content="گروه نقاشی ساختمانی آکسیون آرت با مدیریت محمد عباسی، ارائه‌دهنده خدمات نقاشی داخلی و خارجی با اجرای تمیز و دقیق.">
   <meta name="keywords" content="نقاشی ساختمان, نقاشی داخلی, نقاشی خارجی, خدمات دکوراتیو, پتینه, بلکا">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon"> <!-- اضافه کردن فاویکون -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
   <!-- منوی ثابت بالای صفحه -->
   <nav class="navbar">
     <a href="#home">خانه</a>
-    <a href="#services">خدمات</a>
+    <!-- منوی کشویی برای خدمات -->
+    <div class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">خدمات ما</a>
+        <div class="dropdown-content">
+            <a href="painting.html">نقاشی ساختمان روغنی و پلاستیک</a>
+            <a href="modern-decorative.html">نقاشی مدرن و دکوراتیو</a>
+            <a href="patine-wallpaper.html">پتینه، بلکا و کاغذ دیواری</a>
+        </div>
+    </div>
     <a href="#portfolio">نمونه کارها</a>
     <a href="#contact">تماس</a>
   </nav>
@@ -34,31 +42,6 @@
       </p>
       <a href="tel:09396801433" class="cta-btn">تماس مستقیم</a>
     </header>
-
-    <!-- بخش خدمات -->
-    <section id="services" class="container">
-      <h2>خدمات ما</h2>
-      <div class="services">
-        <div class="service">
-          <a href="services/painting.html">
-            <img src="painting-oil-plastic/1000002468.jpg" alt="نقاشی ساختمان روغنی و پلاستیک">
-            <p>نقاشی ساختمان روغنی و پلاستیک</p>
-          </a>
-        </div>
-        <div class="service">
-          <a href="services/painting.html">
-            <img src="modern-decorative/1000000922.jpg" alt="نقاشی مدرن و دکوراتیو">
-            <p>نقاشی مدرن و دکوراتیو</p>
-          </a>
-        </div>
-        <div class="service">
-          <a href="services/painting.html">
-            <img src="patine-wallpaper/02d10a676f8e7aecb38bc108e52a7fa3.jpg" alt="پتینه، بلکا و کاغذ دیواری">
-            <p>پتینه، بلکا و کاغذ دیواری</p>
-          </a>
-        </div>
-      </div>
-    </section>
 
     <!-- بخش نمونه کارها -->
     <section id="portfolio" class="container">
