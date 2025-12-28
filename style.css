@@ -317,12 +317,17 @@ footer {
 /* ===== Hero Section ===== */
 .hero {
   width: 100%;
-  height: 480px;
-  background: url("Hiro/1000026981.JPG")
+  min-height: 80vh;
+  background: url("https://images.unsplash.com/photo-1581578731548-c64695cc6952")
               center / cover no-repeat;
   position: relative;
+  display: flex;
+  align-items: center;
 }
-
+@media (max-width: 768px) {
+  .hero {
+    min-height: 65vh;
+  }
 /* لایه تیره برای خوانایی متن */
 .hero-overlay {
   background: rgba(0, 0, 0, 0.55);
