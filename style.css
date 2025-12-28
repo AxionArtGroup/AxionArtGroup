@@ -443,6 +443,43 @@ footer {
   transform: translateY(-3px) scale(1.03);
   box-shadow: 0 8px 20px rgba(13, 110, 253, 0.35);
 }
+  <footer class="site-footer">
+  <div class="footer-content">
+
+    <div class="footer-brand">
+      <h3>Axion Art Group</h3>
+      <p>نقاشی حرفه‌ای ساختمان با ضمانت کیفیت</p>
+    </div>
+
+    <div class="footer-contact">
+      <a href="tel:09396801433">
+        <i class="fa-solid fa-phone"></i>
+        تماس
+      </a>
+
+      <a href="https://wa.me/989396801433" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+        واتساپ
+      </a>
+
+      <a href="mailto:AxionArtGroup@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+        ایمیل
+      </a>
+
+      <a href="https://instagram.com/AxionArtGroup" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+        اینستاگرام
+      </a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Axion Art Group — نقاشی ساختمان محمد عباسی
+  </div>
+</footer>
+}
   }
 
 
