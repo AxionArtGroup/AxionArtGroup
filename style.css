@@ -1,9 +1,10 @@
 /* تنظیمات عمومی صفحه */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
+  background-color: #f5f5dc;  /* رنگ کرم/بژ برای پس‌زمینه */
   margin: 0;
   padding: 0;
+  color: #333;  /* رنگ متن اصلی */
 }
 
 .container {
