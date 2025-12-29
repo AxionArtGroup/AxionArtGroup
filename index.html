@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +7,27 @@
   <link rel="stylesheet" href="style.css">
   <meta name="description" content="گروه نقاشی ساختمانی آکسیون آرت با مدیریت محمد عباسی، ارائه‌دهنده خدمات نقاشی داخلی و خارجی با اجرای تمیز و دقیق.">
   <meta name="keywords" content="نقاشی ساختمان, نقاشی داخلی, نقاشی خارجی, خدمات دکوراتیو, پتینه, بلکا">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <meta property="og:image" content="images/cover.jpg">
   
   <!-- لینک به فونت آیکون‌ها -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
 <body>
-  <!-- بخش Hero -->
- <section class="hero">
+   <header id="home">
+      </div>
+          <img src="logo/Axion-Art-Group-Logo.jpg" alt="Axion Art Group Logo">
+        </a>
+      </div>
+      <h1>Axion Art Group</h1>
+      <p>
+        گروه نقاشی ساختمانی آکسیون آرت با مدیریت محمد عباسی  
+        ارائه‌دهنده خدمات نقاشی داخلی و خارجی با اجرای تمیز، دقیق و حرفه‌ای
+      </p>
+      <a href="tel:09396801433" class="cta-btn">تماس مستقیم</a>
+    </header>
+  
+ <section id="home" class="hero">
   <div class="hero-overlay">
     <div class="hero-text">
       <h1> نقاشی حرفه‌ای ساختمان در تهران و کرج</h1>
@@ -43,6 +55,7 @@
         <a href="patine-wallpaper.html">پتینه، بلکا و کاغذ دیواری</a>
       </div>
     </div>
+</nav>
 
    <section class="portfolio-slider container">
   <h2>نمونه کارها</h2>
@@ -51,7 +64,8 @@
     <div class="slide-track">
       <img src="images/IMG_20250902_181312.jpg" alt="طراحی و اجرای نمای مدرن">
      <img src="images/1000002468.jpg" alt="اجرای رنگ نمای دوبلکس">
-      <img src="images/IMG_20250925_091653.jpg" alt="نقاشی نمای ویلایی – تهراندشت"
+      <img src="images/IMG_20250925_091653.jpg" alt="نقاشی نمای ویلایی – تهراندشت">
+
     </div>
   </div>
 <div class="catalog-link">
@@ -167,9 +181,12 @@
 
       document.getElementById('priceResult').innerText = `قیمت تخمینی شما: ${price} تومان`;
       
-      // ارسال به واتساپ
-      const whatsappLink = `https://wa.me/989396801433?text=قیمت تخمینی: ${price} تومان.`;
-      window.open(whatsappLink, '_blank');
+      const message = `قیمت تخمینی شما: ${price} تومان`;
+const whatsappBtn = document.getElementById('whatsappBtn');
+
+whatsappBtn.href = `https://wa.me/989396801433?text=${encodeURIComponent(message)}`;
+whatsappBtn.style.display = 'inline-block';
+
 
       // نمایش دکمه واتساپ
       document.getElementById('whatsappBtn').style.display = 'inline-block';
