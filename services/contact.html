@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>تماس با ما | Axion Art Group</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <a href="index.html">خانه</a>
+  <a href="about.html">درباره ما</a>
+  <a href="testimonials.html">رضایت مشتریان</a>
+  <a href="contact.html">تماس با ما</a>
+</nav>
+
+<div class="page-enter container">
+  <h1>تماس با ما</h1>
+  <p>برای مشاوره، ثبت نظر یا پیشنهاد، فرم زیر را تکمیل کنید.</p>
+
+  <!-- فرم ارسال نظر -->
+  <form
+    action="https://formsubmit.co/AxionArtGroup@gmail.com"
+    method="POST"
+    class="contact-form"
+  >
+    <!-- تنظیمات FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+
+    <label>نام شما</label>
+    <input type="text" name="name" required>
+
+    <label>شماره تماس</label>
+    <input type="text" name="phone">
+
+    <label>نظر یا پیام شما</label>
+    <textarea name="message" rows="5" required></textarea>
+
+    <button type="submit">
+      <i class="fa-solid fa-paper-plane"></i>
+      ارسال نظر
+    </button>
+  </form>
+</div>
+
+</body>
+</html>
