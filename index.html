@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Axion Art Group | نقاشی ساختمان</title>
   <link rel="stylesheet" href="style.css">
-  <meta name="description" content="گروه نقاشی ساختمانی آکسیون آرت با مدیریت محمد عباسی، ارائه‌دهنده خدمات نقاشی داخلی و خارجی با اجرای تمیز و دقیق.">
+  <meta property="og:description" content="نقاشی حرفه‌ای ساختمان در تهران و کرج با مدیریت محمد عباسی">
   <meta name="keywords" content="نقاشی ساختمان, نقاشی داخلی, نقاشی خارجی, خدمات دکوراتیو, پتینه, بلکا">
-  <meta property="og:image" content="images/cover.jpg">
+  <meta property="og:image" content="logo/Axion-Art-Group-Logo.jpg">
   
   <!-- لینک به فونت آیکون‌ها -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -26,21 +26,6 @@
       </p>
       <a href="tel:09396801433" class="cta-btn">تماس مستقیم</a>
     </header>
-  
- <section id="home" class="hero">
-  <div class="hero-overlay">
-    <div class="hero-text">
-      <h1> نقاشی حرفه‌ای ساختمان در تهران و کرج</h1>
-      <p>کیفیت بالا | زمان‌بندی دقیق | رضایت مشتری</p>
-      <a href="#contact" class="hero-btn">تماس و مشاوره رایگان</a>
-
-      <div class="hero-buttons">
-        <a href="tel:09396801433" class="hero-btn call">📞 تماس مستقیم</a>
-        <a href="https://wa.me/989396801433" class="hero-btn whatsapp">💬 واتساپ</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 
   <!-- منوی ثابت بالای صفحه -->
@@ -113,6 +98,16 @@
       </div>
     </div>
   </section>
+  <section id="add-comment" class="container">
+  <h2>نظر شما</h2>
+
+  <form id="commentForm">
+    <input type="text" id="name" placeholder="نام شما" required>
+    <textarea id="comment" placeholder="نظر شما..." required></textarea>
+    <button type="submit">ارسال نظر</button>
+  </form>
+</section>
+
 
   <!-- محاسبه قیمت تخمینی -->
   <section id="price-calculator" class="container">
@@ -160,37 +155,85 @@
 
   <!-- اسکریپت‌های جاوااسکریپت -->
   <script>
-    function calculatePrice() {
-      const roomType = document.getElementById('roomType').value;
-      const paintType = document.getElementById('paintType').value;
-      let price = 0;
+  const commentForm = document.getElementById('commentForm');
+  const testimonialSlider = document.querySelector('.testimonial-slider');
 
-      if (roomType === 'small') {
-        price += 500000;
-      } else if (roomType === 'medium') {
-        price += 800000;
-      } else {
-        price += 1200000;
-      }
+  // لود نظرات ذخیره‌شده
+  window.addEventListener('load', () => {
+    const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
+    savedComments.forEach(addCommentToPage);
+  });
 
-      if (paintType === 'oil') {
-        price += 200000;
-      } else {
-        price += 100000;
-      }
+  commentForm.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-      document.getElementById('priceResult').innerText = `قیمت تخمینی شما: ${price} تومان`;
-      
-      const message = `قیمت تخمینی شما: ${price} تومان`;
-const whatsappBtn = document.getElementById('whatsappBtn');
+    const name = document.getElementById('name').value.trim();
+    const comment = document.getElementById('comment').value.trim();
 
-whatsappBtn.href = `https://wa.me/989396801433?text=${encodeURIComponent(message)}`;
-whatsappBtn.style.display = 'inline-block';
+    if (!name || !comment) return;
 
+    const newComment = { name, comment };
 
-      // نمایش دکمه واتساپ
-      document.getElementById('whatsappBtn').style.display = 'inline-block';
+    addCommentToPage(newComment);
+    saveComment(newComment);
+
+    commentForm.reset();
+  });
+
+  function addCommentToPage({ name, comment }) {
+    const div = document.createElement('div');
+    div.className = 'testimonial';
+    div.innerHTML = `
+      <p>«${comment}»</p>
+      <span>— ${name}</span>
+    `;
+    testimonialSlider.appendChild(div);
+  }
+
+  function saveComment(comment) {
+    const comments = JSON.parse(localStorage.getItem('comments')) || [];
+    comments.push(comment);
+    localStorage.setItem('comments', JSON.stringify(comments));
+  }
+</script>
+
+  <script>
+  function calculatePrice() {
+    const area = Number(document.getElementById('area').value);
+    const paintType = document.getElementById('paintType').value;
+
+    if (!area || area <= 0) {
+      alert('لطفاً متراژ معتبر وارد کنید');
+      return;
     }
-  </script>
+
+    let pricePerMeter = 0;
+
+    if (paintType === 'oil') {
+      pricePerMeter = 300000;
+    } else if (paintType === 'plastic') {
+      pricePerMeter = 220000;
+    } else if (paintType === 'acrylic') {
+      pricePerMeter = 300000;
+    }
+
+    const totalPrice = area * pricePerMeter;
+
+    const formattedPrice = totalPrice.toLocaleString('fa-IR');
+
+    document.getElementById('priceResult').innerText =
+      `قیمت تخمینی شما: ${formattedPrice} تومان`;
+
+    // لینک واتساپ
+    const message =
+      `سلام، متراژ: ${area} متر\nنوع رنگ: ${paintType}\nقیمت تخمینی: ${formattedPrice} تومان`;
+
+    const whatsappBtn = document.getElementById('whatsappBtn');
+    whatsappBtn.href =
+      `https://wa.me/989396801433?text=${encodeURIComponent(message)}`;
+    whatsappBtn.style.display = 'inline-block';
+  }
+</script>
+
 </body>
 </html>
