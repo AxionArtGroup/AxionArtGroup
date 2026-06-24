@@ -1,14 +1,220 @@
 /* ==========================================================================
-   استایل‌های جدید و مدرن‌سازی لندینگ پیج ArtGate
+   ۱. تنظیمات پایه‌ای و فونت (Base Styles)
    ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-/* استایل دکمه کاتالوگ تصاویر */
+body {
+  background-color: #fcfcfc;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  font-size: 2rem;
+  color: #222;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #007bff;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   ۲. استایل منوی بالا (Navbar) - هماهنگ با چندصفحه‌ای
+   ========================================================================== */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #555;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.navbar a:hover, .navbar a.active {
+  color: #007bff;
+  background-color: rgba(0, 123, 255, 0.08);
+}
+
+/* ==========================================================================
+   ۳. بخش هدر و خوش‌آمدگویی (Hero Section)
+   ========================================================================== */
+.hero {
+  background: url('painting-oil-plastic/IMG_20250925_091653.jpg') no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.logo-wrapper {
+  margin-bottom: 20px;
+}
+
+.site-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  object-fit: cover;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.hero-btn {
+  text-decoration: none;
+  padding: 12px 30px;
+  font-weight: bold;
+  border-radius: 25px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+}
+
+.hero-btn.call {
+  background-color: #007bff;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+.hero-btn.whatsapp {
+  background-color: #25d366;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+/* ==========================================================================
+   ۴. بخش خدمات (Services)
+   ========================================================================== */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.service {
+  background: #fff;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  border: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  border-color: #007bff;
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.1);
+}
+
+/* ==========================================================================
+   ۵. بخش نمونه کارها و کاتالوگ (Portfolio)
+   ========================================================================== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.gallery-item {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item p {
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  color: #555;
+}
+
+/* دکمه کاتالوگ تصاویر */
 .catalog-link-wrapper {
   text-align: center;
-  margin: 35px auto;
+  margin: 45px auto 15px;
   font-size: 1.1rem;
   color: #444;
 }
+
 .catalog-btn {
   display: inline-flex;
   align-items: center;
@@ -21,196 +227,12 @@
   font-weight: bold;
   font-size: 1.1rem;
   border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(245, 124, 0, 0.3.5);
+  box-shadow: 0 4px 15px rgba(245, 124, 0, 0.3);
   transition: all 0.3s ease;
   margin-top: 12px;
 }
+
 .catalog-btn:hover {
   background: linear-gradient(135deg, #f57c00, #e65100);
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(245, 124, 0, 0.5);
-}
-.catalog-icon {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-/* استایل‌های بخش فرم محاسبات قیمت جدید */
-.calculator-card {
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  max-width: 600px;
-  margin: 0 auto;
-}
-.calculator-card label {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: #333;
-}
-.calculator-card input {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 1rem;
-  margin-bottom: 15px;
-  box-sizing: border-box;
-  transition: border-color 0.3s;
-}
-.calculator-card input:focus {
-  border-color: #007bff;
-  outline: none;
-}
-.calc-btn {
-  width: 100%;
-  background: #007bff;
-  color: #fff;
-  border: none;
-  padding: 14px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.calc-btn:hover {
-  background: #0056b3;
-}
-.price-result-box {
-  display: none;
-  margin-top: 20px;
-  text-align: right;
-}
-.result-details {
-  background: #f8f9fa;
-  border-right: 5px solid #28a745;
-  padding: 15px;
-  border-radius: 8px;
-  line-height: 1.8;
-}
-.result-title {
-  font-weight: bold;
-  color: #28a745;
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-}
-.section-h {
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 5px;
-}
-.result-details ul {
-  margin: 0;
-  padding-right: 20px;
-}
-.whatsapp-estimate-btn {
-  display: block;
-  text-align: center;
-  background: #25d366;
-  color: white !important;
-  text-decoration: none;
-  padding: 12px;
-  border-radius: 8px;
-  font-weight: bold;
-  margin-top: 15px;
-  transition: background 0.2s;
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
-}
-.whatsapp-estimate-btn:hover {
-  background: #20ba5a;
-}
-
-/* بخش درباره ما ارتقا یافته */
-.about-content {
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.8;
-}
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  margin-top: 25px;
-}
-.feature-item {
-  background: #f1f3f5;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-weight: bold;
-  color: #495057;
-}
-
-/* بخش کارت‌های تماس */
-.contact-links {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-}
-.contact-card {
-  display: block;
-  text-align: center;
-  padding: 15px;
-  text-decoration: none;
-  color: white !important;
-  font-weight: bold;
-  border-radius: 10px;
-  transition: transform 0.2s;
-}
-.contact-card:hover {
-  transform: translateY(-3px);
-}
-.contact-card.phone { background: #007bff; }
-.contact-card.whatsapp { background: #25d366; }
-.contact-card.instagram { background: #e1306c; }
-.contact-card.email { background: #444; }
-
-/* سیستم دکمه‌های شناور هوشمند گوشه صفحه */
-.floating-container {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 9999;
-}
-.float-btn {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white !important;
-  text-decoration: none;
-  font-size: 24px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-  transition: transform 0.2s;
-}
-.float-wa {
-  background-color: #25D366;
-  animation: pulseAnimation 2s infinite;
-}
-.float-call {
-  background-color: #007bff;
-}
-.float-btn:hover {
-  transform: scale(1.1);
-}
-
-/* انیمیشن پالس / نبض برای دکمه واتساپ شناور */
-@keyframes pulseAnimation {
-  0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-  }
-}
+  box-shadow: 0 6px 20
