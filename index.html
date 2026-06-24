@@ -98,14 +98,15 @@
     </div>
   </div>
 
-  <div class="catalog-link">
-    جهت دیدن نمونه‌های بیشتر از
-    <a href="https://docs.google.com/presentation/d/e/2PACX-1vRXEhekgkFVIEjdjbyIDkIrQ83-k7p05W2ckB3lAdPLWhzBKyntjL1qCTKxtmp7vWBUlmTv2vfqKp49/pub?start=false&loop=false&delayms=3000"
-       target="_blank">
-      کاتالوگ تصاویر
-    </a>
-    دیدن فرمایید
-  </div>
+  <div class="catalog-link-wrapper">
+  جهت دیدن نمونه‌های بیشتر، روی دکمه زیر کلیک کنید:
+  <a href="https://docs.google.com/presentation/d/e/2PACX-1vRXEhekgkFVIEjdjbyIDkIrQ83-k7p05W2ckB3lAdPLWhzBKyntjL1qCTKxtmp7vWBUlmTv2vfqKp49/pub?start=false&loop=false&delayms=3000"
+     target="_blank" class="catalog-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="catalog-icon"><path d="M4 22V4c0-.5.2-1 .6-1.4C5 2.2 5.5 2 6 2h12c.5 0 1 .2 1.4.6.4.4.6.9.6 1.4v18l-8-4-8 4z"></path><path d="M12 2v16"></path></svg>
+    مشاهده کاتالوگ تصاویر نمونه کارها
+  </a>
+</div>
+
 </section>
 
 <!-- محاسبه قیمت -->
@@ -183,32 +184,60 @@
 <script>
   function calculatePrice() {
     const area = Number(document.getElementById('area').value);
-    const paintType = document.getElementById('paintType').value;
 
     if (!area || area <= 0) {
       alert('لطفاً متراژ معتبر وارد کنید');
       return;
     }
 
-    // فرمول جدید: ۶۰ متر زیربنا + (۶۰ * ۲.۷ متر دیوارها) = ۲۲۲ متر کل سطح
-    const totalSurfaceArea = area + (area * 2.7); 
+    // محاسبات متراژ سقف و دیوار
+    const ceilingArea = area;
+    const wallArea = area * 2.7;
 
-    let pricePerMeter = 0;
-    if (paintType === 'oil') pricePerMeter = 300000;
-    else if (paintType === 'plastic') pricePerMeter = 220000;
-    else pricePerMeter = 300000;
+    // نرخ قیمت هر متر مربع برای انواع رنگ (قابل تغییر توسط شما)
+    const prices = {
+      oil: 300000,     // روغنی
+      plastic: 220000, // پلاستیک
+      acrylic: 300000  // اکرولیک
+    };
 
-    const total = totalSurfaceArea * pricePerMeter;
-    const formattedPrice = total.toLocaleString('fa-IR');
-    const formattedSurface = totalSurfaceArea.toLocaleString('fa-IR');
+    // محاسبات قیمت سقف برای هر سه رنگ
+    const ceilingOil = (ceilingArea * prices.oil).toLocaleString('fa-IR');
+    const ceilingPlastic = (ceilingArea * prices.plastic).toLocaleString('fa-IR');
+    const ceilingAcrylic = (ceilingArea * prices.acrylic).toLocaleString('fa-IR');
 
-    // نمایش نتیجه به کاربر شامل متراژ کل سطوح و قیمت
-    document.getElementById('priceResult').innerHTML =
-      `متراژ تخمینی کل سطوح (دیوار و سقف): <strong>${formattedSurface}</strong> متر مربع<br>` +
-      `قیمت تخمینی نهایی: <strong>${formattedPrice}</strong> تومان`;
+    // محاسبات قیمت دیوارها برای هر سه رنگ
+    const wallOil = (wallArea * prices.oil).toLocaleString('fa-IR');
+    const wallPlastic = (wallArea * prices.plastic).toLocaleString('fa-IR');
+    const wallAcrylic = (wallArea * prices.acrylic).toLocaleString('fa-IR');
 
-    // آماده‌سازی متن برای ارسال در واتساپ
-    const msg = `سلام، متراژ واحد: ${area} متر\nمتراژ کل سطوح محاسبه شده: ${totalSurfaceArea} متر مربع\nنوع رنگ: ${paintType === 'oil' ? 'روغنی' : paintType === 'plastic' ? 'پلاستیک' : 'آکرولیک'}\nقیمت تخمینی: ${formattedPrice} تومان`;
+    // فرمت کردن متراژها برای نمایش
+    const fCeilingArea = ceilingArea.toLocaleString('fa-IR');
+    const fWallArea = wallArea.toLocaleString('fa-IR');
+
+    // ساختن خروجی متنی با ساختار زیبا و تفکیک شده
+    let resultHTML = `
+      <div style="line-height: 1.8; margin-top: 15px; padding: 10px; background: #f9f9f9; border-right: 4px solid #007bff;">
+        <p><strong>۱. محاسبه متراژ و هزینه سقف (${fCeilingArea} متر مربع):</strong></p>
+        <ul>
+          <li>رنگ پلاستیک: <strong>${ceilingPlastic}</strong> تومان</li>
+          <li>رنگ اکرولیک: <strong>${ceilingAcrylic}</strong> تومان</li>
+          <li>رنگ روغنی: <strong>${ceilingOil}</strong> تومان</li>
+        </ul>
+        
+        <p style="margin-top: 15px;"><strong>۲. محاسبه متراژ و هزینه تقریبی دیوارها (${fWallArea} متر مربع):</strong></p>
+        <ul>
+          <li>رنگ پلاستیک: <strong>${wallPlastic}</strong> تومان</li>
+          <li>رنگ اکرولیک: <strong>${wallAcrylic}</strong> تومان</li>
+          <li>رنگ روغنی: <strong>${wallOil}</strong> تومان</li>
+        </ul>
+      </div>
+    `;
+
+    document.getElementById('priceResult').innerHTML = resultHTML;
+
+    // آماده‌سازی متن خلاصه برای واتساپ
+    const msg = `سلام، متراژ واحد: ${area} متر\n\nهزینه سقف (${ceilingArea} متر):\n-پلاستیک: ${ceilingPlastic}\n-اکرولیک: ${ceilingAcrylic}\n-روغنی: ${ceilingOil}\n\nهزینه دیوارها (${wallArea} متر):\n-پلاستیک: ${wallPlastic}\n-اکرولیک: ${wallAcrylic}\n-روغنی: ${wallOil}`;
 
     const btn = document.getElementById('whatsappBtn');
     btn.href = `https://wa.me/989335795451?text=${encodeURIComponent(msg)}`;
