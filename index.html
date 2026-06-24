@@ -190,19 +190,25 @@
       return;
     }
 
+    // فرمول جدید: ۶۰ متر زیربنا + (۶۰ * ۲.۷ متر دیوارها) = ۲۲۲ متر کل سطح
+    const totalSurfaceArea = area + (area * 2.7); 
+
     let pricePerMeter = 0;
     if (paintType === 'oil') pricePerMeter = 300000;
     else if (paintType === 'plastic') pricePerMeter = 220000;
     else pricePerMeter = 300000;
 
-    const total = area * pricePerMeter;
-    const formatted = total.toLocaleString('fa-IR');
+    const total = totalSurfaceArea * pricePerMeter;
+    const formattedPrice = total.toLocaleString('fa-IR');
+    const formattedSurface = totalSurfaceArea.toLocaleString('fa-IR');
 
-    document.getElementById('priceResult').innerText =
-      `قیمت تخمینی شما: ${formatted} تومان`;
+    // نمایش نتیجه به کاربر شامل متراژ کل سطوح و قیمت
+    document.getElementById('priceResult').innerHTML =
+      `متراژ تخمینی کل سطوح (دیوار و سقف): <strong>${formattedSurface}</strong> متر مربع<br>` +
+      `قیمت تخمینی نهایی: <strong>${formattedPrice}</strong> تومان`;
 
-    const msg =
-      `سلام، متراژ: ${area} متر\nقیمت تخمینی: ${formatted} تومان`;
+    // آماده‌سازی متن برای ارسال در واتساپ
+    const msg = `سلام، متراژ واحد: ${area} متر\nمتراژ کل سطوح محاسبه شده: ${totalSurfaceArea} متر مربع\nنوع رنگ: ${paintType === 'oil' ? 'روغنی' : paintType === 'plastic' ? 'پلاستیک' : 'آکرولیک'}\nقیمت تخمینی: ${formattedPrice} تومان`;
 
     const btn = document.getElementById('whatsappBtn');
     btn.href = `https://wa.me/989335795451?text=${encodeURIComponent(msg)}`;
