@@ -1,255 +1,216 @@
-/* ===== BASE ===== */
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: #f5f1ea;
-  color: #4b3621;
-  direction: rtl;
-}
+/* ==========================================================================
+   استایل‌های جدید و مدرن‌سازی لندینگ پیج ArtGate
+   ========================================================================== */
 
-a {
+/* استایل دکمه کاتالوگ تصاویر */
+.catalog-link-wrapper {
+  text-align: center;
+  margin: 35px auto;
+  font-size: 1.1rem;
+  color: #444;
+}
+.catalog-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #ff9800, #f57c00);
+  color: #fff !important;
   text-decoration: none;
-  color: inherit;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-/* ===== NAVBAR ===== */
-.navbar {
-  background-color: #e8dfd1;
-  display: flex;
-  gap: 20px;
-  padding: 15px 20px;
-  align-items: center;
-}
-
-.navbar a {
+  padding: 14px 30px;
   font-weight: bold;
-  color: #4b3621;
-}
-
-.navbar a:hover {
-  color: #7a5c3e;
-}
-
-/* ===== HERO ===== */
-.hero {
-  height: 480px;
-  background: url("images/1000026981.jpg") center / cover no-repeat;
-  position: relative;
-}
-
-.hero-overlay {
-  background: rgba(75, 54, 33, 0.55);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-content {
-  text-align: center;
-  color: #fff;
-  max-width: 800px;
-  padding: 0 20px;
-}
-
-/* ===== LOGO WITH BACKGROUND ===== */
-.logo-wrapper {
-  width: 220px;
-  height: 220px;
-  margin: 0 auto 25px;
-
-  background-image: url("images/logo-bg.jpg"); /* تصویر پشت لوگو */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 16px;
-  padding: 20px;
-
-  position: relative;
-}
-
-.logo-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  filter: blur(6px);
-  opacity: 0.6;
-  border-radius: 16px;
-  z-index: 1;
-}
-
-.site-logo {
-  max-width: 160px;
-  height: auto;
-  z-index: 2;
-}
-
-/* ===== HERO BUTTONS ===== */
-.hero-buttons {
-  margin-top: 25px;
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.hero-btn {
-  padding: 12px 28px;
-  border-radius: 8px;
-  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(245, 124, 0, 0.3.5);
   transition: all 0.3s ease;
+  margin-top: 12px;
+}
+.catalog-btn:hover {
+  background: linear-gradient(135deg, #f57c00, #e65100);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(245, 124, 0, 0.5);
+}
+.catalog-icon {
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.hero-btn.call {
-  background-color: #7a5c3e;
-}
-
-.hero-btn.whatsapp {
-  background-color: #25d366;
-}
-
-.hero-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
-
-/* ===== SERVICES ===== */
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.service {
-  background-color: #fdfbf7;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* ===== PORTFOLIO ===== */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.gallery-item img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-/* ===== PRICE CALCULATOR ===== */
-#price-calculator {
-  background-color: #e8dfd1;
-  text-align: center;
-}
-
-#priceForm {
-  background-color: #fdfbf7;
-  max-width: 420px;
-  margin: 0 auto;
+/* استایل‌های بخش فرم محاسبات قیمت جدید */
+.calculator-card {
+  background: #ffffff;
   padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: 0 auto;
 }
-
-#priceForm input,
-#priceForm select {
+.calculator-card label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+.calculator-card input {
   width: 100%;
   padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
   margin-bottom: 15px;
-  border-radius: 6px;
-  border: 1px solid #cbbba4;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
 }
-
-#priceForm button {
-  background-color: #7a5c3e;
+.calculator-card input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.calc-btn {
+  width: 100%;
+  background: #007bff;
   color: #fff;
   border: none;
   padding: 14px;
+  font-size: 1.1rem;
+  font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
+  transition: background 0.2s;
 }
-
-.whatsapp-estimate-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 20px;
-  background-color: #25d366;
-  color: #fff;
-  border-radius: 8px;
+.calc-btn:hover {
+  background: #0056b3;
 }
-
-/* ===== TESTIMONIALS ===== */
-.testimonials {
-  background-color: #f5f1ea;
-  text-align: center;
+.price-result-box {
+  display: none;
+  margin-top: 20px;
+  text-align: right;
 }
-
-.testimonial {
-  background-color: #fdfbf7;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 300px;
-  margin: 10px auto;
-}
-
-/* ===== ABOUT ===== */
-#about {
-  background-color: #e8dfd1;
-  text-align: center;
-}
-
-/* ===== CONTACT ===== */
-.contact a {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 18px;
-  background-color: #7a5c3e;
-  color: #fff;
-  border-radius: 6px;
-}
-
-/* ===== FLOAT BUTTONS ===== */
-.call-float,
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: #25d366;
-  color: #fff;
-  border-radius: 50%;
+.result-details {
+  background: #f8f9fa;
+  border-right: 5px solid #28a745;
   padding: 15px;
+  border-radius: 8px;
+  line-height: 1.8;
+}
+.result-title {
+  font-weight: bold;
+  color: #28a745;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.section-h {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+.result-details ul {
+  margin: 0;
+  padding-right: 20px;
+}
+.whatsapp-estimate-btn {
+  display: block;
+  text-align: center;
+  background: #25d366;
+  color: white !important;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: background 0.2s;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+}
+.whatsapp-estimate-btn:hover {
+  background: #20ba5a;
+}
+
+/* بخش درباره ما ارتقا یافته */
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
+.feature-item {
+  background: #f1f3f5;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #495057;
+}
+
+/* بخش کارت‌های تماس */
+.contact-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+.contact-card {
+  display: block;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  color: white !important;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+.contact-card:hover {
+  transform: translateY(-3px);
+}
+.contact-card.phone { background: #007bff; }
+.contact-card.whatsapp { background: #25d366; }
+.contact-card.instagram { background: #e1306c; }
+.contact-card.email { background: #444; }
+
+/* سیستم دکمه‌های شناور هوشمند گوشه صفحه */
+.floating-container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   z-index: 9999;
 }
-
-.whatsapp-float {
-  left: 80px;
+.float-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+  text-decoration: none;
+  font-size: 24px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  transition: transform 0.2s;
+}
+.float-wa {
+  background-color: #25D366;
+  animation: pulseAnimation 2s infinite;
+}
+.float-call {
+  background-color: #007bff;
+}
+.float-btn:hover {
+  transform: scale(1.1);
 }
 
-/* ===== FOOTER ===== */
-footer {
-  background-color: #4b3621;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
+/* انیمیشن پالس / نبض برای دکمه واتساپ شناور */
+@keyframes pulseAnimation {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
 }
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-  .hero {
