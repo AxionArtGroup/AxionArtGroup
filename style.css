@@ -1,15 +1,32 @@
 /* ===== BASE ===== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px; /* جلوگیری از رفتن عنوان‌ها زیر منوی ثابت */
+}
+
+[hidden] {
+  display: none !important;
+}
+
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: Vazirmatn, Tahoma, "Segoe UI", sans-serif;
   background-color: #f5f1ea;
   color: #4b3621;
   direction: rtl;
+  line-height: 1.6;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #b8741a;
+  outline-offset: 2px;
 }
 
 .container {
@@ -30,11 +47,13 @@ h2 {
   gap: 20px;
   padding: 15px 20px;
   align-items: center;
-  /* اضافه شده برای ثابت ماندن منو در بالای صفحه */
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  /* در موبایل منو از صفحه بیرون نزند */
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .navbar a {
@@ -78,7 +97,7 @@ h2 {
   width: 220px;
   height: 220px;
   margin: 0 auto 25px;
-  background-image: url("images/logo-bg.jpg"); 
+  background-image: url("images/logo-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -88,6 +107,7 @@ h2 {
   border-radius: 16px;
   padding: 20px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .logo-wrapper::before {
@@ -104,6 +124,8 @@ h2 {
 .site-logo {
   max-width: 160px;
   height: auto;
+  /* بدون position، z-index اثر ندارد و لایه تار روی لوگو می‌افتاد */
+  position: relative;
   z-index: 2;
 }
 
@@ -129,7 +151,7 @@ h2 {
 }
 
 .hero-btn.whatsapp {
-  background-color: #25d366;
+  background-color: #148a4c; /* کمی تیره‌تر برای خوانایی متن سفید */
 }
 
 .hero-btn:hover {
@@ -158,7 +180,7 @@ h2 {
   transform: translateY(-5px);
 }
 
-/* ===== PORTFOLIO & IMAGES (FIXED) ===== */
+/* ===== PORTFOLIO & IMAGES ===== */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -168,7 +190,7 @@ h2 {
 .gallery-item {
   background-color: #fdfbf7;
   border-radius: 8px;
-  padding-bottom: 10px; /* فضای پایین برای متن */
+  padding-bottom: 10px;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   overflow: hidden;
@@ -176,10 +198,11 @@ h2 {
 
 .gallery-item img {
   width: 100%;
-  height: 250px; /* این خط جلوی غول‌پیکر شدن عکس‌ها رو می‌گیره */
-  object-fit: cover; /* این خط باعث میشه عکس‌ها دفرمه نشن */
+  height: 250px;
+  object-fit: cover;
   border-radius: 8px 8px 0 0;
   display: block;
+  background-color: #e8dfd1; /* رنگ جایگاه تا زمان لود تصویر */
 }
 
 .gallery-item p {
@@ -187,7 +210,7 @@ h2 {
   font-weight: bold;
 }
 
-/* ===== CATALOG BUTTON (NEW) ===== */
+/* ===== CATALOG BUTTON ===== */
 .catalog-link-wrapper {
   text-align: center;
   margin: 35px auto;
@@ -199,25 +222,26 @@ h2 {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: linear-gradient(135deg, #ff9800, #f57c00);
+  background: linear-gradient(135deg, #d96b00, #b85600); /* کنتراست بهتر با متن سفید */
   color: #fff !important;
   padding: 14px 30px;
   font-weight: bold;
   border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(245, 124, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(184, 86, 0, 0.3);
   transition: all 0.3s ease;
   margin-top: 12px;
 }
 
 .catalog-btn:hover {
-  background: linear-gradient(135deg, #f57c00, #e65100);
+  background: linear-gradient(135deg, #b85600, #964500);
   transform: translateY(-3px);
 }
 
-/* ===== PRICE CALCULATOR (BLENDED WITH YOUR COLORS) ===== */
+/* ===== PRICE CALCULATOR ===== */
 #price-calculator {
   background-color: #e8dfd1;
   text-align: center;
+  max-width: none; /* پس‌زمینه تمام‌عرض شود */
 }
 
 .calculator-card {
@@ -243,6 +267,20 @@ h2 {
   border-radius: 6px;
   border: 1px solid #cbbba4;
   box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.calculator-card input[aria-invalid="true"] {
+  border-color: #b3261e;
+  margin-bottom: 8px;
+}
+
+.field-error {
+  color: #b3261e;
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin: 0 0 15px;
 }
 
 .calc-btn {
@@ -255,6 +293,7 @@ h2 {
   cursor: pointer;
   font-weight: bold;
   font-size: 1.1rem;
+  font-family: inherit;
 }
 
 .calc-btn:hover {
@@ -278,7 +317,35 @@ h2 {
   font-weight: bold;
   color: #7a5c3e;
   font-size: 1.1rem;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
+}
+
+.section-h {
+  font-weight: bold;
+  margin: 0 0 4px;
+}
+
+.result-section + .result-section {
+  margin-top: 15px;
+}
+
+.result-details ul {
+  margin: 0;
+  padding-right: 20px;
+}
+
+.result-disclaimer {
+  margin: 18px 0 0;
+  padding-top: 12px;
+  border-top: 1px dashed #cbbba4;
+  font-size: 0.95rem;
+  color: #6b4f33;
+}
+
+.result-note {
+  margin: 8px 0 0;
+  font-size: 0.85rem;
+  color: #6b4f33;
 }
 
 .whatsapp-estimate-btn {
@@ -286,7 +353,7 @@ h2 {
   text-align: center;
   margin-top: 15px;
   padding: 12px 20px;
-  background-color: #25d366;
+  background-color: #148a4c;
   color: #fff !important;
   border-radius: 8px;
   font-weight: bold;
@@ -295,6 +362,7 @@ h2 {
 /* ===== ABOUT ===== */
 #about {
   background-color: #e8dfd1;
+  max-width: none;
 }
 
 .about-content {
@@ -342,15 +410,15 @@ h2 {
 }
 
 .contact-card.phone { background: #7a5c3e; }
-.contact-card.whatsapp { background: #25d366; }
-.contact-card.instagram { background: #e1306c; }
+.contact-card.whatsapp { background: #148a4c; }
+.contact-card.instagram { background: #c9235a; }
 .contact-card.email { background: #4b3621; }
 
-/* ===== FLOAT BUTTONS (NEW PULSE EFFECT) ===== */
+/* ===== FLOAT BUTTONS ===== */
 .floating-container {
   position: fixed;
   bottom: 25px;
-  right: 25px; 
+  right: 25px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -371,7 +439,7 @@ h2 {
 }
 
 .float-wa {
-  background-color: #25D366;
+  background-color: #148a4c;
   animation: pulseAnimation 2s infinite;
 }
 
@@ -384,9 +452,9 @@ h2 {
 }
 
 @keyframes pulseAnimation {
-  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(20, 138, 76, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(20, 138, 76, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(20, 138, 76, 0); }
 }
 
 /* ===== FOOTER ===== */
@@ -400,8 +468,33 @@ footer {
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
-  .hero { 
+  .hero {
     height: auto;
+  }
+
+  .hero-overlay {
     padding: 60px 0;
+    box-sizing: border-box;
+  }
+
+  .container {
+    padding: 30px 16px;
+  }
+
+  /* دکمه‌های شناور آخر صفحه روی فوتر نیفتند */
+  footer {
+    padding-bottom: 90px;
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }
